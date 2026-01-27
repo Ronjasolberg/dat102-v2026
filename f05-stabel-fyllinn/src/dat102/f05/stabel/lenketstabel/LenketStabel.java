@@ -23,12 +23,15 @@ public final class LenketStabel<T> implements StabelADT<T> {
 
 	@Override
 	public void push(T newEntry) {
+        // Lager et nodeobjekt (new Node) der data = newEntry og neste = topNode.
+        // topNode får ny verdi, den settes til å referere ny node.
 		topNode = new Node(newEntry, topNode);
 	}
 
 	@Override
 	public T peek() {
 		if (isEmpty())
+            // Kaster et unntak hvis stabelen er tom.
 			throw new EmptyStackException();
 		else
 			return topNode.data;
@@ -36,6 +39,8 @@ public final class LenketStabel<T> implements StabelADT<T> {
 
 	@Override
 	public T pop() {
+        // peek()-metoden sjekker om stabelen er tom og evt kaste unntak (som er i peek-metoden).
+        // top er hjelpevariabel for å ta vare på det som skal returneres.
 		T top = peek(); // Might throw EmptyStackException
 		// Assertion: topNode != null
 		topNode = topNode.neste;

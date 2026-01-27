@@ -16,6 +16,7 @@ import dat102.f05.stabel.StabelADT;
 public final class TabellStabel<T> implements StabelADT<T> {
 
 	private T[] stack;
+    // tall som viser hvilken indeks den øverste ligger
 	private int topIndex;
 
 	private static final int DEFAULT_CAPACITY = 10;
@@ -50,6 +51,7 @@ public final class TabellStabel<T> implements StabelADT<T> {
 		if (isEmpty()) {
 			throw new EmptyStackException();
 		}
+        // hjelpevariabel som tar vare på elementet som fjernes
 		T top = stack[topIndex];
 		stack[topIndex] = null;
 		topIndex--;

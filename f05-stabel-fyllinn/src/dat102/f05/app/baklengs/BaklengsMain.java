@@ -6,7 +6,22 @@ public class BaklengsMain {
 		
 		String[] tabell = {"Anne", "Per", "Lise", "Knut"};
 		
-		//TODO fra scratch
+		// Skrive ut elementene i tabellen baklengs
+
+        // Oppretter en stabel
+        StabelADT<String> stabel = new TabellStabel<>();
+
+        // Legger inn alle navnene fra tabell inn i stabelen
+        for (String navn : tabell) {
+            stabel.push(navn);
+        }
+        
+        while (!stabel.isEmpty()) {
+            System.out.println(stabel.pop());
+        }
+
+
+
 		
 	}
 	
